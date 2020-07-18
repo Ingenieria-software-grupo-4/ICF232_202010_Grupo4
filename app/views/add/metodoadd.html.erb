@@ -1,0 +1,35 @@
+<div class="topnav">
+  <a href="/home">Home</a>
+  <a class="active" href="#">Agregar producto al inventario</a>
+  <a href="/verify">Verificar productos del inventario</a>
+  <a href="/login">Cerrar sesion</a>
+</div> 
+
+<form action="action_page.php" style="border:1px solid #ccc">
+  <div class="container">
+    <h1>Añadir a inventario</h1>
+    <p>LLena los campos para añadir al inventario.</p>
+    <hr>
+
+    <label for="name"><b>Nombre</b></label>
+    <input type="text" placeholder="Ingresa tu nombre" name="name" required>
+
+    <label for="stock"><b>Stock</b></label>
+    <input type="text" placeholder="Ingresa tu Stock" name="stock" required>
+
+    <label for="code"><b>Codigo</b></label>
+    <input type="text" placeholder="Ingresa tu Codigo" name="code" required>
+
+
+
+
+    <!--<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>-->
+
+    <div class="clearfix">
+
+      <!--<button type="button" class="cancelbtn" >cancelar</button>-->
+       <button class="cancelbtn" onclick="window.location.href='/home';">Cancelar</button>
+      <button type="submit" class="signupbtn">Ingresar</button>
+    </div>
+  </div>
+</form>
