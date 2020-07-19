@@ -8,15 +8,14 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.email_field :name, autofocus: true, autocomplete: "name" %>
-  </div>
+  <label for="name"><b>Nombre</b></label>
+  <input type="text" placeholder="Ingresa tu nombre" name="name" required>
 
-  <div class="field">
-    <%= f.label :rut %><br />
-    <%= f.email_field :rut, autofocus: true, autocomplete: "rut" %>
-  </div>"
+  <label for="rut"><b>Rut</b></label>
+  <input type="text" placeholder="Ingresa tu Rut" name="rut" required>
+
+  <label for="telefono"><b>Telefono</b></label>
+  <input type="text" placeholder="Ingresa tu telefono" name="tel" required>
 
   <div class="field">
     <%= f.label :password %>
@@ -31,7 +30,7 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="actions">
+  <div class="actions" href="/home">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>

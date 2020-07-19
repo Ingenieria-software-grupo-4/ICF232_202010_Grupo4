@@ -1,2 +1,37 @@
-<h1>Verify#metodoverify</h1>
-<p>Find me in app/views/verify/metodoverify.html.erb</p>
+ <div class="topnav">
+  <a href="/">Home</a>
+  <a href="/add">Agregar producto al inventario</a>
+  <a class="active" href="#">Verificar productos del inventario</a>
+  <a href="/users/sign_in"><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></a>
+</div> 
+<h1>Verificar Inventario</h1>
+
+ <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:40%;">Name</th>
+    <th style="width:30%;">Stock</th>
+    <th style="width:30%;">Codigo</th>
+  </tr>
+  <tr>
+    <td><a href="/login">helado</a></td>
+    <td>20</td>
+    <td>101</td>
+  </tr>
+  <tr>
+    <td>papas</td>
+    <td>30</td>
+    <td>102</td>
+  </tr>
+  <tr>
+    <td>galletas</td>
+    <td>15</td>
+    <td>103</td>
+  </tr>
+  <tr>
+    <td>bebidas</td>
+    <td>30</td>
+    <td>103</td>
+  </tr>
+</table>
