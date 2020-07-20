@@ -10,7 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_16_025512) do
+ActiveRecord::Schema.define(version: 2020_07_20_012315) do
+
+  create_table "products", force: :cascade do |t|
+    t.string "nombre"
+    t.string "tipo"
+    t.integer "codigo"
+    t.integer "stock"
+    t.integer "precio"
+    t.integer "id_usuario"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sale_details", force: :cascade do |t|
+    t.integer "codigo_venta"
+    t.integer "cantidad"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sales", force: :cascade do |t|
+    t.integer "monto"
+    t.integer "codigo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,6 +48,15 @@ ActiveRecord::Schema.define(version: 2020_07_16_025512) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "usuarios", force: :cascade do |t|
+    t.string "nombre"
+    t.integer "rut"
+    t.string "email"
+    t.integer "telefono"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
