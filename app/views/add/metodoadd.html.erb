@@ -5,20 +5,26 @@
   <a href="/users/sign_in"><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></a>
 </div> 
 
-<form action="action_page.php" style="border:1px solid #ccc">
+<form>
   <div class="container">
     <h1>Añadir a inventario</h1>
     <p>LLena los campos para añadir al inventario.</p>
     <hr>
 
     <label for="name"><b>Nombre</b></label>
-    <input type="text" placeholder="Ingresa el nombre del producto" name="name" required>
+    <input type="text" placeholder="Ingresa el nombre del producto" name="name" required <%= text_field_tag 'name', @nombre %>
 
     <label for="stock"><b>Stock</b></label>
-    <input type="text" placeholder="Ingresa el Stock del producto" name="stock" required>
+    <input type="text" placeholder="Ingresa el Stock del producto" name="stock" required <%= text_field_tag 'stock', @stock %>
 
     <label for="code"><b>Codigo</b></label>
-    <input type="text" placeholder="Ingresa el Codigo del producto" name="code" required>
+    <input type="text" placeholder="Ingresa el Codigo del producto" name="code" required <%= text_field_tag 'code', @codigo %>
+
+    <label for="price"><b>Precio</b></label>
+    <input type="text" placeholder="Ingresa el Precio del producto" name="price" required <%= text_field_tag 'price', @precio %>
+
+    <label for="type"><b>Tipo De Producto</b></label>
+    <input type="text" placeholder="Ingresa el Tipo de producto" name="type" required <%= text_field_tag 'type', @tipo %>
 
 
 
@@ -28,8 +34,8 @@
     <div class="clearfix">
 
       <!--<button type="button" class="cancelbtn" >cancelar</button>-->
-       <button class="cancelbtn" onclick="window.location.href='/home';">Cancelar</button>
-      <button type="submit" class="signupbtn">Añadir</button>
+      <!--button class="cancelbtn" onclick="window.location.href='/';">Cancelar</button-->
+      <button type="submit" class="signupbtn" onclick="window.location.href='/';">Añadir</button>
     </div>
   </div>
 </form>
