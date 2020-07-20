@@ -3137,3 +3137,339 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 189ms (Views: 187.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2020-07-19 20:05:50 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 46ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-07-19 20:05:50 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (14.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (165.4ms)
+Completed 200 OK in 1070ms (Views: 1009.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-07-19 20:05:55 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DrLxaOhFEMMXJM63sRnHrCeepLc2s68T+KccshGEUIIgPIzDADLUKH3LVT0fb4JUGEkJRhs4he+vDHybeb69Tw==", "user"=>{"email"=>"vargas.caceres.felipe@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (35.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "vargas.caceres.felipe@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:276
+Redirected to http://localhost:3000/
+Completed 302 Found in 564ms (ActiveRecord: 35.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-19 20:05:56 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 105ms (Views: 70.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/add" for 127.0.0.1 at 2020-07-19 20:05:58 -0400
+Processing by AddController#metodoadd as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 197ms (Views: 164.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/verify" for 127.0.0.1 at 2020-07-19 20:05:59 -0400
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  Rendered verify/metodoverify.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 114ms (Views: 92.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/css/searchicon.png" for 127.0.0.1 at 2020-07-19 20:05:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/searchicon.png"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+/usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-07-19 20:06:04 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IWEYRSC8bFOIZ0YxZAcxBHRJMTCwklWrEupPJKcY9MW8UAqim9zqu1jWiWJ/ZXBA6bCtm/m5XdpE5xk1FCfe9g=="}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/rememberable.rb:62
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/rememberable.rb:62
+Redirected to http://localhost:3000/
+Completed 302 Found in 65ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-19 20:06:04 -0400
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-07-19 20:06:04 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 141ms (Views: 140.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to CreateUsuarios (20200720001135)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mUsuario Load (1.9ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to CreateUsuarios (20200720001135)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20200720001135_create_usuarios.rb:3
+  [1m[35m (30.8ms)[0m  [1m[35mCREATE TABLE "usuarios" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "rut" integer, "email" varchar, "telefono" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200720001135_create_usuarios.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200720001135"]]
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (33.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to CreateProducts (20200720010643)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20200720010643_create_products.rb:3
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "tipo" varchar, "codigo" integer, "stock" integer, "precio" integer, "id_usuario" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200720010643_create_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200720010643"]]
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (38.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.4ms)[0m  [1m[32mINSERT INTO "products" ("nombre", "tipo", "codigo", "stock", "precio", "id_usuario", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nombre", "Martillo"], ["tipo", "Herramientas"], ["codigo", 99999], ["stock", 50], ["precio", 4990], ["id_usuario", 1], ["created_at", "2020-07-20 01:19:05.731967"], ["updated_at", "2020-07-20 01:19:05.731967"]]
+  [1m[35m (43.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to CreateSales (20200720012038)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20200720012038_create_sales.rb:3
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "sales" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "monto" integer, "codigo" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200720012038_create_sales.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200720012038"]]
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (53.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (2.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to CreateSaleDetails (20200720012315)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to CreateSaleDetails (20200720012315)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to CreateSaleDetails (20200720012315)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20200720012315_create_sale_details.rb:3
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "sale_details" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "codigo_venta" integer, "cantidad" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200720012315_create_sale_details.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200720012315"]]
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (55.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rubygems-integration/all/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (5.8ms)[0m  [1m[33mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Felipe Vargas"], ["updated_at", "2020-07-20 01:28:17.555370"], ["id", 1]]
+  [1m[35m (11.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2020-07-19 21:30:04 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 73ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-07-19 21:30:05 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (133.1ms)
+Completed 200 OK in 1217ms (Views: 1161.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-07-19 21:30:19 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gfd4DM20VIUe1+qaNGwPqt1Vu0x9mvJlep6uCRKyCZ47qeU3gm3VwBxV5sbzPfOxGW72+raZdubzE3mATZIW/Q==", "user"=>{"email"=>"vargas.caceres.felipe@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (50.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "vargas.caceres.felipe@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:276
+Redirected to http://localhost:3000/
+Completed 302 Found in 1507ms (ActiveRecord: 50.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-19 21:30:20 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 197ms (Views: 160.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/add" for 127.0.0.1 at 2020-07-19 21:30:22 -0400
+Processing by AddController#metodoadd as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 71ms (Views: 47.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/verify" for 127.0.0.1 at 2020-07-19 21:30:24 -0400
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  Rendered verify/metodoverify.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 233ms (Views: 202.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/css/searchicon.png" for 127.0.0.1 at 2020-07-19 21:30:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/searchicon.png"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+/usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-07-19 21:30:33 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YivEEXULqW9shK3XtDMO12u8nXKYvBP3UimeMKQ+MGRNsZ2Uxt0TmwmMaKjgd2V4ZAhemIFYpHZWNzAeFxucwQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/rememberable.rb:62
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/rememberable.rb:62
+Redirected to http://localhost:3000/
+Completed 302 Found in 102ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-19 21:30:33 -0400
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-07-19 21:30:33 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (56.2ms)
+Completed 200 OK in 298ms (Views: 297.4ms | ActiveRecord: 0.0ms)
+
+
