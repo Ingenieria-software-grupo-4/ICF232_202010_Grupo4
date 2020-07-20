@@ -14,7 +14,9 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-
+function PopUp(){
+  alert("El producto fue creado con exito.")
+}
 
 function myFunction() {
   // Declare variables
