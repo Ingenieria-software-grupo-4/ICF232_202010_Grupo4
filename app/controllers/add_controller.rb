@@ -5,7 +5,8 @@ class AddController < ApplicationController
   	@codigo = params[:code]
   	@precio = params[:price]
   	@tipo = params[:type]
+  	@id_usuario = current_user.id
 
-  	@producto = Product.create({nombre: @nombre, tipo: @tipo, codigo: @codigo, stock: @stock, precio: @precio})
+  	@producto = Product.create({nombre: @nombre, tipo: @tipo, codigo: @codigo, stock: @stock, precio: @precio, id_usuario: @id_usuario})
   end
 end

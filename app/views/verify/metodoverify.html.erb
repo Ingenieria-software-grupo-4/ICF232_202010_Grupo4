@@ -16,11 +16,13 @@
     <th style="width:20%;">Precio</th>
   </tr>
   <% @productos.each do |p| %>
+  <% if(p.id_usuario==current_user.id) %>
   <tr>
     <td><%= p.nombre %></td>
     <td><%= p.stock %></td>
     <td><%= p.codigo %></td>
     <td><%= p.precio %></td>
   </tr>
+  <% end %>
   <% end %>
 </table>
