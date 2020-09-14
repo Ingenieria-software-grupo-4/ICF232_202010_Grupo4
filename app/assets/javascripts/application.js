@@ -16,6 +16,8 @@
 //= require_tree .
 function PopUp(){
   alert("El producto fue creado con exito.")
+  window.location = '/home'
+
 }
 
 function myFunction() {
