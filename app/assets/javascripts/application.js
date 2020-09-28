@@ -17,6 +17,10 @@
 function PopUp(){
   alert("El producto fue creado con exito.")
 }
+function PopUp2(){
+  
+  alert("elemento añadido")
+}
 
 function myFunction() {
   // Declare variables

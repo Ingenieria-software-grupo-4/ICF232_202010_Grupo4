@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'add', to: 'add#metodoadd'
   get 'modif', to: 'modif#metodomodif'
   get 'verify', to: 'verify#metodoverify'
-
+  get 'venta', to: 'venta#vender'
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
