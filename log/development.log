@@ -5787,3 +5787,1473 @@ puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
 puma (3.12.6) lib/puma/server.rb:476:in `process_client'
 puma (3.12.6) lib/puma/server.rb:334:in `block in run'
 puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-09-10 16:47:06 -0300
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-10 16:47:07 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 247ms (Views: 245.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-09-10 16:47:16 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SRjlmsOjHxNJCZV7tjR1xAdl06K03k2sqG4S8oIDnZLLlDQRPW56GrgMzviOoEvzJtWLiOQRomwH6KkLO47cxQ==", "user"=>{"email"=>"vargas.caceres.felipe@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "vargas.caceres.felipe@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:276
+Redirected to http://localhost:3000/
+Completed 302 Found in 613ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-10 16:47:17 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 168ms (Views: 142.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/add" for 127.0.0.1 at 2020-09-10 16:47:19 -0300
+Processing by AddController#metodoadd as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  [1m[36mProduct Create (5.2ms)[0m  [1m[32mINSERT INTO "products" ("id_usuario", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["id_usuario", 1], ["created_at", "2020-09-10 19:47:19.853538"], ["updated_at", "2020-09-10 19:47:19.853538"]]
+  ↳ app/controllers/add_controller.rb:10
+  [1m[35m (110.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 439ms (Views: 267.3ms | ActiveRecord: 116.3ms)
+
+
+Started GET "/add?name=perro&stock=34095&code=90238475&price=54767&type=sdlkfj" for 127.0.0.1 at 2020-09-10 16:47:36 -0300
+Processing by AddController#metodoadd as HTML
+  Parameters: {"name"=>"perro", "stock"=>"34095", "code"=>"90238475", "price"=>"54767", "type"=>"sdlkfj"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  [1m[36mProduct Create (3.4ms)[0m  [1m[32mINSERT INTO "products" ("nombre", "tipo", "codigo", "stock", "precio", "id_usuario", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nombre", "perro"], ["tipo", "sdlkfj"], ["codigo", 90238475], ["stock", 34095], ["precio", 54767], ["id_usuario", 1], ["created_at", "2020-09-10 19:47:36.130372"], ["updated_at", "2020-09-10 19:47:36.130372"]]
+  ↳ app/controllers/add_controller.rb:10
+  [1m[35m (49.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 460ms (Views: 369.0ms | ActiveRecord: 53.4ms)
+
+
+Started GET "/verify" for 127.0.0.1 at 2020-09-10 16:47:42 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 208ms (Views: 205.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/css/searchicon.png" for 127.0.0.1 at 2020-09-10 16:47:43 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/css/searchicon.png"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+/usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Destroy (2.9ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 44]]
+  [1m[35m (35.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Destroy (0.4ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 45]]
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Destroy (1.6ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 46]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Destroy (3.0ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 47]]
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Destroy (1.0ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 48]]
+  [1m[35m (45.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Destroy (1.6ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 49]]
+  [1m[35m (18.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Destroy (0.2ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 50]]
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Destroy (0.2ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 51]]
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Destroy (0.3ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 52]]
+  [1m[35m (17.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Destroy (0.2ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 53]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/verify" for 127.0.0.1 at 2020-09-10 16:53:14 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 354ms (Views: 339.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/css/searchicon.png" for 127.0.0.1 at 2020-09-10 16:53:17 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/css/searchicon.png"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+/usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/add" for 127.0.0.1 at 2020-09-10 17:04:09 -0300
+Processing by AddController#metodoadd as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  [1m[36mProduct Create (4.5ms)[0m  [1m[32mINSERT INTO "products" ("id_usuario", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["id_usuario", 1], ["created_at", "2020-09-10 20:04:09.986612"], ["updated_at", "2020-09-10 20:04:09.986612"]]
+  ↳ app/controllers/add_controller.rb:10
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 281ms (Views: 211.6ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/verify" for 127.0.0.1 at 2020-09-10 17:04:11 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 271ms (Views: 252.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/add" for 127.0.0.1 at 2020-09-10 17:04:12 -0300
+Processing by AddController#metodoadd as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  [1m[36mProduct Create (2.3ms)[0m  [1m[32mINSERT INTO "products" ("id_usuario", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["id_usuario", 1], ["created_at", "2020-09-10 20:04:12.790666"], ["updated_at", "2020-09-10 20:04:12.790666"]]
+  ↳ app/controllers/add_controller.rb:10
+  [1m[35m (316.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 531ms (Views: 189.4ms | ActiveRecord: 319.0ms)
+
+
+Started GET "/verify" for 127.0.0.1 at 2020-09-10 17:04:13 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 356ms (Views: 343.7ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/add" for 127.0.0.1 at 2020-09-10 17:04:14 -0300
+Processing by AddController#metodoadd as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  [1m[36mProduct Create (10.7ms)[0m  [1m[32mINSERT INTO "products" ("id_usuario", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["id_usuario", 1], ["created_at", "2020-09-10 20:04:14.297563"], ["updated_at", "2020-09-10 20:04:14.297563"]]
+  ↳ app/controllers/add_controller.rb:10
+  [1m[35m (83.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 444ms (Views: 282.8ms | ActiveRecord: 94.6ms)
+
+
+Started GET "/verify" for 127.0.0.1 at 2020-09-10 17:04:15 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 316ms (Views: 285.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/add" for 127.0.0.1 at 2020-09-10 17:04:16 -0300
+Processing by AddController#metodoadd as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  [1m[36mProduct Create (8.4ms)[0m  [1m[32mINSERT INTO "products" ("id_usuario", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["id_usuario", 1], ["created_at", "2020-09-10 20:04:16.096218"], ["updated_at", "2020-09-10 20:04:16.096218"]]
+  ↳ app/controllers/add_controller.rb:10
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 323ms (Views: 276.7ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/add" for 127.0.0.1 at 2020-09-10 17:15:39 -0300
+Processing by AddController#metodoadd as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  [1m[36mProduct Create (4.6ms)[0m  [1m[32mINSERT INTO "products" ("id_usuario", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["id_usuario", 1], ["created_at", "2020-09-10 20:15:39.556784"], ["updated_at", "2020-09-10 20:15:39.556784"]]
+  ↳ app/controllers/add_controller.rb:10
+  [1m[35m (201.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 580ms (Views: 337.9ms | ActiveRecord: 207.6ms)
+
+
+Started GET "/verify" for 127.0.0.1 at 2020-09-10 17:15:43 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 209ms (Views: 203.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/css/searchicon.png" for 127.0.0.1 at 2020-09-10 17:15:43 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/css/searchicon.png"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+/usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/add" for 127.0.0.1 at 2020-09-10 17:15:44 -0300
+Processing by AddController#metodoadd as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  [1m[36mProduct Create (1.5ms)[0m  [1m[32mINSERT INTO "products" ("id_usuario", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["id_usuario", 1], ["created_at", "2020-09-10 20:15:44.934522"], ["updated_at", "2020-09-10 20:15:44.934522"]]
+  ↳ app/controllers/add_controller.rb:10
+  [1m[35m (72.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 461ms (Views: 320.0ms | ActiveRecord: 74.0ms)
+
+
+Started GET "/verify" for 127.0.0.1 at 2020-09-10 17:15:45 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 271ms (Views: 260.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-14 16:43:18 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 73ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-14 16:43:19 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (142.4ms)
+Completed 200 OK in 1152ms (Views: 870.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-14 16:43:34 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.9ms)
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 96ms (Views: 94.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-09-14 16:44:36 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eayFtzo84HEpA0K7dwb7m+fiRBhywTfm6HQbcmeCbV+FLTQWnk+bnnvnYuFIiyBB5qYdtQ4hAeVf2zNz6ZXOZA==", "user"=>{"email"=>"f.vargascceres@uandresbello.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "name"=>"luis", "rut"=>"18075050-9", "tel"=>"987332565", "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/app/controllers/devise/registrations_controller.rb:19
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "f.vargascceres@uandresbello.edu"], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/app/controllers/devise/registrations_controller.rb:19
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "f.vargascceres@uandresbello.edu"], ["encrypted_password", "$2a$12$SHYk47foNv6ntPsHtX3nOOO.yEM/pspsGc1lS5LS5nXZOmCRAQUb."], ["created_at", "2020-09-14 19:44:37.653783"], ["updated_at", "2020-09-14 19:44:37.653783"]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/app/controllers/devise/registrations_controller.rb:19
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/app/controllers/devise/registrations_controller.rb:19
+Redirected to http://localhost:3000/
+Completed 302 Found in 812ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-14 16:44:37 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 225ms (Views: 149.0ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-09-14 16:44:42 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5T68MzRSv4qYNkRkSgp/1gwUwr5ycXVm9o1kv5+Iu7ztKRRpUF2k9bfHsZnI2cWCifTDK1KE/skx7ECc55Gf4w=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/rememberable.rb:62
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/rememberable.rb:62
+Redirected to http://localhost:3000/
+Completed 302 Found in 102ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-14 16:44:42 -0300
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-14 16:44:42 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 76ms (Views: 75.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-09-14 16:44:58 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+2r8XI9F+ZJukTtHezI3kMsUNz46LcgzEThOrVsOxdAYuaguHArinmuLmPhHzcuc1lfI3+nd+60uujkx5NDwew==", "user"=>{"email"=>"f.vargascceres@uandresbello.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "f.vargascceres@uandresbello.edu"], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:276
+Redirected to http://localhost:3000/
+Completed 302 Found in 387ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-14 16:44:58 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 53ms (Views: 50.8ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Destroy (38.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-09-14 16:49:04 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YKeG8x5TqTugKLnPV7114halocTc+1D4IRkSKMZlYqGh5qLyueFmhquoD1SBvfY+1rsvFg6vszp6LsqEtNvg5w=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+Redirected to http://localhost:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-14 16:49:04 -0300
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-14 16:49:04 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 105ms (Views: 104.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-14 16:49:08 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 121ms (Views: 120.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-14 16:52:01 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (664.5ms)
+Completed 500 Internal Server Error in 672ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name_field' for #<ActionView::Helpers::FormBuilder:0x00007fb41987b980>
+Did you mean?  number_field
+               range_field
+               time_field
+               date_field):
+    10: 
+    11:   <div class="field">
+    12:     <%= f.label :name %><br />
+    13:     <%= f.name_field :name, autofocus: true, autocomplete: "name" %>
+    14:   </div>
+    15: 
+    16:   <div class="field">
+  
+app/views/devise/registrations/new.html.erb:13:in `block in _app_views_devise_registrations_new_html_erb___3405776727787910801_18560'
+app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb___3405776727787910801_18560'
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-14 16:52:43 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (37.2ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `rut' for #<User:0x00007fb41864e6b8>):
+    15: 
+    16:   <div class="field">
+    17:     <%= f.label :rut %><br />
+    18:     <%= f.email_field :rut, autofocus: true, autocomplete: "rut" %>
+    19:   </div>
+    20: 
+    21:   <div class="field">
+  
+app/views/devise/registrations/new.html.erb:18:in `block in _app_views_devise_registrations_new_html_erb___3405776727787910801_19260'
+app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb___3405776727787910801_19260'
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-14 16:53:40 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (30.5ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `rut' for #<User:0x00007fb420163bf0>):
+    15: 
+    16:   <div class="field">
+    17:     <%= f.label :rut %><br />
+    18:     <%= f.email_field :rut, autofocus: true, autocomplete: "rut" %>
+    19:   </div>
+    20: 
+    21:   <div class="field">
+  
+app/views/devise/registrations/new.html.erb:18:in `block in _app_views_devise_registrations_new_html_erb___3405776727787910801_19800'
+app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb___3405776727787910801_19800'
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-14 16:54:28 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/shared/_links.html.erb (21.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (36.8ms)
+Completed 200 OK in 165ms (Views: 150.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-14 16:54:46 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/feliopeke/Escritorio/ICF232_202010_Grupo4/app/views/devise/registrations/new.html.erb:18: syntax error, unexpected tLABEL, expecting '='
+...nd=( f.email_field , autofocus: true, autocomplete: "rut" );...
+...                     ^~~~~~~~~~
+/home/feliopeke/Escritorio/ICF232_202010_Grupo4/app/views/devise/registrations/new.html.erb:18: Can't assign to true
+...f.email_field , autofocus: true, autocomplete: "rut" );@outp...
+...                           ^~~~
+/home/feliopeke/Escritorio/ICF232_202010_Grupo4/app/views/devise/registrations/new.html.erb:23: syntax error, unexpected tLABEL, expecting '='
+...d=( f.number_field , autofocus: true, autocomplete: "phone" ...
+...                     ^~~~~~~~~~
+/home/feliopeke/Escritorio/ICF232_202010_Grupo4/app/views/devise/registrations/new.html.erb:23: Can't assign to true
+....number_field , autofocus: true, autocomplete: "phone" );@ou...
+...                           ^~~~
+):
+  
+app/views/devise/registrations/new.html.erb:18: syntax error, unexpected tLABEL, expecting '='
+app/views/devise/registrations/new.html.erb:18: Can't assign to true
+app/views/devise/registrations/new.html.erb:23: syntax error, unexpected tLABEL, expecting '='
+app/views/devise/registrations/new.html.erb:23: Can't assign to true
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-14 16:55:06 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/shared/_links.html.erb (3.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (349.0ms)
+Completed 200 OK in 509ms (Views: 505.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-14 16:55:28 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (756.9ms)
+Completed 500 Internal Server Error in 780ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `field' for #<ActionView::Helpers::FormBuilder:0x00007fb420580eb8>
+Did you mean?  fields
+               yield):
+    20: 
+    21:   <div class="field">
+    22:     <%= f.label :phone %><br />
+    23:     <%= f.field :email, autofocus: true, autocomplete: "phone" %>
+    24:   </div>
+    25: 
+    26:   <div class="field">
+  
+app/views/devise/registrations/new.html.erb:23:in `block in _app_views_devise_registrations_new_html_erb___3405776727787910801_21180'
+app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb___3405776727787910801_21180'
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-14 16:55:39 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/shared/_links.html.erb (19.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (36.1ms)
+Completed 200 OK in 260ms (Views: 258.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-14 16:56:38 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (6.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (31.4ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (no block given (yield)):
+    10: 
+    11:   <div class="field">
+    12:     <%= f.label :name %><br />
+    13:     <%= f.fields :name, autofocus: true, autocomplete: "name" %>
+    14:   </div>
+    15: 
+    16:   <div class="field">
+  
+app/views/devise/registrations/new.html.erb:13:in `block in _app_views_devise_registrations_new_html_erb___3405776727787910801_21880'
+app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb___3405776727787910801_21880'
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-14 16:56:52 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (39.1ms)
+Completed 200 OK in 173ms (Views: 171.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-14 16:57:28 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (50.7ms)
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `rut' for #<User:0x00007fb4200918d0>):
+    15: 
+    16:   <div class="field">
+    17:     <%= f.label :rut %><br />
+    18:     <%= f.text_field :rut, autofocus: true, autocomplete: "rut" %>
+    19:   </div>
+    20: 
+    21:   <div class="field">
+  
+app/views/devise/registrations/new.html.erb:18:in `block in _app_views_devise_registrations_new_html_erb___3405776727787910801_22540'
+app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb___3405776727787910801_22540'
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-14 16:57:44 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (8.9ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/feliopeke/Escritorio/ICF232_202010_Grupo4/app/views/devise/registrations/new.html.erb:18: syntax error, unexpected tLABEL, expecting '='
+...end=( f.text_field , autofocus: true, autocomplete: "rut" );...
+...                     ^~~~~~~~~~
+/home/feliopeke/Escritorio/ICF232_202010_Grupo4/app/views/devise/registrations/new.html.erb:18: Can't assign to true
+... f.text_field , autofocus: true, autocomplete: "rut" );@outp...
+...                           ^~~~
+):
+  
+app/views/devise/registrations/new.html.erb:18: syntax error, unexpected tLABEL, expecting '='
+app/views/devise/registrations/new.html.erb:18: Can't assign to true
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-14 16:57:58 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 170ms (Views: 169.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-09-14 16:59:01 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6ezXRGZUQWbSeBywPppTjox3ebPpj8wnczcBz+37Zf0orfNFweaO29n4qivomtBSTGn3YTvbL+UoANljn0Xnuw==", "user"=>{"email"=>"987332565", "name"=>"Pedro Rosas", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :name
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/app/controllers/devise/registrations_controller.rb:19
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "987332565"], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/app/controllers/devise/registrations_controller.rb:19
+  [1m[35m (38.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/app/controllers/devise/registrations_controller.rb:19
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (4.0ms)
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 685ms (Views: 227.6ms | ActiveRecord: 38.6ms)
+
+
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/users" for 127.0.0.1 at 2020-09-14 17:00:07 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+/usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users" for 127.0.0.1 at 2020-09-14 17:00:43 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+/usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users" for 127.0.0.1 at 2020-09-14 17:00:45 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+/usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-09-14 17:00:49 -0300
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-14 17:00:49 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 115ms (Views: 107.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-09-14 17:00:51 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (9.0ms)
+  Rendered devise/shared/_links.html.erb (3.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 118ms (Views: 117.0ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mProduct Load (3.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Destroy (2.7ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 59]]
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Destroy (3.3ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 58]]
+  [1m[35m (601.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Destroy (2.0ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 57]]
+  [1m[35m (44.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Destroy (3.3ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 56]]
+  [1m[35m (19.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Destroy (7.8ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 55]]
+  [1m[35m (13.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Destroy (13.0ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 54]]
+  [1m[35m (59.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2020-09-18 21:13:46 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 59ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-18 21:13:47 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (117.5ms)
+Completed 200 OK in 1597ms (Views: 1507.7ms | ActiveRecord: 7.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-09-18 21:13:55 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J6zAXgRjreYdllgLHhwLA0S2veyEAMA6gV03+/KceUX8UvUqiqrzqejdSsQl6lPsl8muuidNIN1n6d0zIJ/hzw==", "user"=>{"email"=>"vargas.caceres.felipe@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "vargas.caceres.felipe@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:276
+Redirected to http://localhost:3000/
+Completed 302 Found in 1282ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-18 21:13:56 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 192ms (Views: 145.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/add" for 127.0.0.1 at 2020-09-18 21:13:58 -0300
+Processing by AddController#metodoadd as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  [1m[36mProduct Create (3.4ms)[0m  [1m[32mINSERT INTO "products" ("id_usuario", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["id_usuario", 1], ["created_at", "2020-09-19 00:13:58.741864"], ["updated_at", "2020-09-19 00:13:58.741864"]]
+  ↳ app/controllers/add_controller.rb:10
+  [1m[35m (157.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 359ms (Views: 94.3ms | ActiveRecord: 161.2ms)
+
+
+Started GET "/add?name=perro&stock=876&code=230948&price=5990&type=mascota" for 127.0.0.1 at 2020-09-18 21:14:18 -0300
+Processing by AddController#metodoadd as HTML
+  Parameters: {"name"=>"perro", "stock"=>"876", "code"=>"230948", "price"=>"5990", "type"=>"mascota"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  [1m[36mProduct Create (7.7ms)[0m  [1m[32mINSERT INTO "products" ("nombre", "tipo", "codigo", "stock", "precio", "id_usuario", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nombre", "perro"], ["tipo", "mascota"], ["codigo", 230948], ["stock", 876], ["precio", 5990], ["id_usuario", 1], ["created_at", "2020-09-19 00:14:18.892260"], ["updated_at", "2020-09-19 00:14:18.892260"]]
+  ↳ app/controllers/add_controller.rb:10
+  [1m[35m (53.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 290ms (Views: 213.6ms | ActiveRecord: 61.0ms)
+
+
+Started GET "/verify" for 127.0.0.1 at 2020-09-18 21:14:53 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (8.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 216ms (Views: 171.7ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/css/searchicon.png" for 127.0.0.1 at 2020-09-18 21:14:53 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/css/searchicon.png"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+/usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2020-09-28 15:34:15 -0300
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 52ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-09-28 15:34:16 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (99.2ms)
+Completed 200 OK in 848ms (Views: 812.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-09-28 15:34:23 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W43EoF6xkWPIiw1/NKn1s2gDYxfKWyBRmahOMxkXrbOyW1dqaKfB1z413H8yUY9FtEJqcGpBhhmhIyAu8epi1g==", "user"=>{"email"=>"vargas.caceres.felipe@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (14.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "vargas.caceres.felipe@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:276
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/rememberable.rb:53
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", "2020-09-28 18:34:24.624955"], ["updated_at", "2020-09-28 18:34:24.626857"], ["id", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/rememberable.rb:53
+  [1m[35m (16.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/rememberable.rb:53
+Redirected to http://localhost:3000/
+Completed 302 Found in 780ms (ActiveRecord: 31.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-28 15:34:24 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 99ms (Views: 70.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/add" for 127.0.0.1 at 2020-09-28 15:34:26 -0300
+Processing by AddController#metodoadd as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  [1m[36mProduct Create (3.1ms)[0m  [1m[32mINSERT INTO "products" ("id_usuario", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["id_usuario", 1], ["created_at", "2020-09-28 18:34:26.632146"], ["updated_at", "2020-09-28 18:34:26.632146"]]
+  ↳ app/controllers/add_controller.rb:10
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/add_controller.rb:10
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 254ms (Views: 71.5ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/verify" for 127.0.0.1 at 2020-09-28 15:34:28 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 111ms (Views: 73.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/css/searchicon.png" for 127.0.0.1 at 2020-09-28 15:34:29 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/css/searchicon.png"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+/usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/add" for 127.0.0.1 at 2020-09-28 15:36:14 -0300
+  
+SyntaxError (/home/feliopeke/Escritorio/ICF232_202010_Grupo4/app/controllers/add_controller.rb:9: syntax error, unexpected local variable or method, expecting ')'
+  	if(@nombre is not nil){
+  	           ^~
+/home/feliopeke/Escritorio/ICF232_202010_Grupo4/app/controllers/add_controller.rb:11: syntax error, unexpected '}', expecting `end'):
+  
+app/controllers/add_controller.rb:9: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/add_controller.rb:11: syntax error, unexpected '}', expecting `end'
+Started GET "/verify" for 127.0.0.1 at 2020-09-28 15:36:15 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 230ms (Views: 164.8ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/add" for 127.0.0.1 at 2020-09-28 15:36:16 -0300
+  
+SyntaxError (/home/feliopeke/Escritorio/ICF232_202010_Grupo4/app/controllers/add_controller.rb:9: syntax error, unexpected local variable or method, expecting ')'
+  	if(@nombre is not nil){
+  	           ^~
+/home/feliopeke/Escritorio/ICF232_202010_Grupo4/app/controllers/add_controller.rb:11: syntax error, unexpected '}', expecting `end'):
+  
+app/controllers/add_controller.rb:9: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/add_controller.rb:11: syntax error, unexpected '}', expecting `end'
+Started GET "/verify" for 127.0.0.1 at 2020-09-28 15:36:17 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 92ms (Views: 88.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/add" for 127.0.0.1 at 2020-09-28 15:36:17 -0300
+  
+SyntaxError (/home/feliopeke/Escritorio/ICF232_202010_Grupo4/app/controllers/add_controller.rb:9: syntax error, unexpected local variable or method, expecting ')'
+  	if(@nombre is not nil){
+  	           ^~
+/home/feliopeke/Escritorio/ICF232_202010_Grupo4/app/controllers/add_controller.rb:11: syntax error, unexpected '}', expecting `end'):
+  
+app/controllers/add_controller.rb:9: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/add_controller.rb:11: syntax error, unexpected '}', expecting `end'
+Started GET "/verify" for 127.0.0.1 at 2020-09-28 15:36:21 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 89ms (Views: 86.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/css/searchicon.png" for 127.0.0.1 at 2020-09-28 15:36:22 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/css/searchicon.png"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+/usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/add" for 127.0.0.1 at 2020-09-28 15:36:23 -0300
+  
+SyntaxError (/home/feliopeke/Escritorio/ICF232_202010_Grupo4/app/controllers/add_controller.rb:9: syntax error, unexpected local variable or method, expecting ')'
+  	if(@nombre is not nil){
+  	           ^~
+/home/feliopeke/Escritorio/ICF232_202010_Grupo4/app/controllers/add_controller.rb:11: syntax error, unexpected '}', expecting `end'):
+  
+app/controllers/add_controller.rb:9: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/add_controller.rb:11: syntax error, unexpected '}', expecting `end'
+Started GET "/add" for 127.0.0.1 at 2020-09-28 15:36:47 -0300
+  
+SyntaxError (/home/feliopeke/Escritorio/ICF232_202010_Grupo4/app/controllers/add_controller.rb:9: syntax error, unexpected local variable or method, expecting ')'
+  	if(@nombre is not nil){
+  	           ^~
+/home/feliopeke/Escritorio/ICF232_202010_Grupo4/app/controllers/add_controller.rb:11: syntax error, unexpected '}', expecting `end'):
+  
+app/controllers/add_controller.rb:9: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/add_controller.rb:11: syntax error, unexpected '}', expecting `end'
+Started GET "/add" for 127.0.0.1 at 2020-09-28 15:37:37 -0300
+  
+SyntaxError (/home/feliopeke/Escritorio/ICF232_202010_Grupo4/app/controllers/add_controller.rb:9: syntax error, unexpected instance variable, expecting `then' or ';' or '\n'
+  	if @nombre != nil @producto = Product.create({nombre: @n...
+  	                  ^~~~~~~~~
+/home/feliopeke/Escritorio/ICF232_202010_Grupo4/app/controllers/add_controller.rb:12: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/add_controller.rb:9: syntax error, unexpected instance variable, expecting `then' or ';' or '\n'
+app/controllers/add_controller.rb:12: syntax error, unexpected `end', expecting end-of-input
+Started GET "/add" for 127.0.0.1 at 2020-09-28 15:37:51 -0300
+Processing by AddController#metodoadd as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 249ms (Views: 162.9ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/verify" for 127.0.0.1 at 2020-09-28 15:37:54 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 159ms (Views: 142.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/css/searchicon.png" for 127.0.0.1 at 2020-09-28 15:37:54 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/css/searchicon.png"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+/usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/add" for 127.0.0.1 at 2020-09-28 15:37:56 -0300
+Processing by AddController#metodoadd as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 99ms (Views: 93.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/verify" for 127.0.0.1 at 2020-09-28 15:37:57 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 110ms (Views: 104.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/add" for 127.0.0.1 at 2020-09-28 15:37:57 -0300
+Processing by AddController#metodoadd as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 88ms (Views: 86.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/verify" for 127.0.0.1 at 2020-09-28 15:37:58 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 151ms (Views: 143.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/add" for 127.0.0.1 at 2020-09-28 15:37:58 -0300
+Processing by AddController#metodoadd as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 186ms (Views: 180.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/verify" for 127.0.0.1 at 2020-09-28 15:37:59 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 177ms (Views: 172.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/add" for 127.0.0.1 at 2020-09-28 15:37:59 -0300
+Processing by AddController#metodoadd as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 86ms (Views: 81.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/verify" for 127.0.0.1 at 2020-09-28 15:37:59 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 130ms (Views: 126.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/add" for 127.0.0.1 at 2020-09-28 15:38:00 -0300
+Processing by AddController#metodoadd as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 86ms (Views: 81.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/verify" for 127.0.0.1 at 2020-09-28 15:38:04 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (9.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 113ms (Views: 99.1ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/add" for 127.0.0.1 at 2020-09-28 15:38:05 -0300
+Processing by AddController#metodoadd as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 99ms (Views: 97.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/verify" for 127.0.0.1 at 2020-09-28 15:38:05 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 96ms (Views: 92.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/add" for 127.0.0.1 at 2020-09-28 15:38:06 -0300
+Processing by AddController#metodoadd as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 123ms (Views: 120.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/verify" for 127.0.0.1 at 2020-09-28 15:38:07 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 107ms (Views: 102.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/add" for 127.0.0.1 at 2020-09-28 15:38:07 -0300
+Processing by AddController#metodoadd as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 84ms (Views: 81.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/add?name=casa+de+perros&stock=10&code=239294&price=19990&type=casa" for 127.0.0.1 at 2020-09-28 15:38:35 -0300
+Processing by AddController#metodoadd as HTML
+  Parameters: {"name"=>"casa de perros", "stock"=>"10", "code"=>"239294", "price"=>"19990", "type"=>"casa"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/add_controller.rb:9
+  [1m[36mProduct Create (7.9ms)[0m  [1m[32mINSERT INTO "products" ("nombre", "tipo", "codigo", "stock", "precio", "id_usuario", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nombre", "casa de perros"], ["tipo", "casa"], ["codigo", 239294], ["stock", 10], ["precio", 19990], ["id_usuario", 1], ["created_at", "2020-09-28 18:38:35.984686"], ["updated_at", "2020-09-28 18:38:35.984686"]]
+  ↳ app/controllers/add_controller.rb:9
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/add_controller.rb:9
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 95ms (Views: 60.1ms | ActiveRecord: 18.4ms)
+
+
+Started GET "/verify" for 127.0.0.1 at 2020-09-28 15:38:36 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 95ms (Views: 91.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/css/searchicon.png" for 127.0.0.1 at 2020-09-28 15:38:36 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/css/searchicon.png"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+/usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/add" for 127.0.0.1 at 2020-09-28 15:38:40 -0300
+Processing by AddController#metodoadd as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering add/metodoadd.html.erb within layouts/application
+  Rendered add/metodoadd.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 93ms (Views: 89.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/verify" for 127.0.0.1 at 2020-09-28 15:38:41 -0300
+Processing by VerifyController#metodoverify as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/feliopeke/.bundle/ruby/2.7.0/devise-f5cc775a5fee/lib/devise/models/authenticatable.rb:238
+  Rendering verify/metodoverify.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/verify/metodoverify.html.erb:18
+  Rendered verify/metodoverify.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 109ms (Views: 104.2ms | ActiveRecord: 0.4ms)
+
+
