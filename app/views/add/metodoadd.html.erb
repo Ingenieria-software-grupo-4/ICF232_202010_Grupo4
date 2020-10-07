@@ -4,26 +4,8 @@
 
   <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 
-    <title>Ramayana - Free Bootstrap 4 CSS Template</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-<!--
-Ramayana CSS Template
-https://templatemo.com/tm-529-ramayana
--->
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-style.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
 
   </head>
 
@@ -32,13 +14,6 @@ https://templatemo.com/tm-529-ramayana
     <!-- Wrapper -->
     <div id="wrapper">
 
-<<<<<<< Updated upstream
-    <div class="clearfix">
-
-      <!--<button type="button" class="cancelbtn" >cancelar</button>-->
-      <!--button class="cancelbtn" onclick="window.location.href='/';">Cancelar</button-->
-      <button type="submit" class="signupbtn" onclick="PopUp()">Añadir</button>
-=======
       <!-- Main -->
         <div id="main">
           <div class="inner">
@@ -76,10 +51,7 @@ https://templatemo.com/tm-529-ramayana
                             
                                 <label for="type"><b>Tipo De Producto</b></label>
                                 <input type="text" placeholder="Ingresa el Tipo de producto" name="type" required <%= text_field_tag 'type', @tipo %>
-                            
-                            
-                            
-                            
+                          
                                 <!--<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>-->
                             
                                 <div class="action" >
@@ -110,24 +82,15 @@ https://templatemo.com/tm-529-ramayana
                 <li><a href="home">Inicio</a></li>
                 <li><a href="add">add</a></li>
                 <li><a href="verify">verify</a></li>
-                <li><a href="verify">cerrar sesion</a></li>
+                <li><a <%= link_to "cerrar sesion", destroy_user_session_path, method: :delete %></a></li>
               </ul>
             </nav>
           </div>
         </div>
->>>>>>> Stashed changes
+
     </div>
 
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/transition.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/custom.js"></script>
 </body>
 
 
