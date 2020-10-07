@@ -1,41 +1,99 @@
-<div class="topnav">
-  <a href="/">Home</a>
-  <a class="active" href="#">Agregar producto al inventario</a>
-  <a href="/verify">Verificar productos del inventario</a>
-  <a href="/users/sign_in"><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></a>
-</div> 
 
-<form>
-  <div class="container">
-    <h1>Añadir a inventario</h1>
-    <p>LLena los campos para añadir al inventario.</p>
-    <hr>
+<!DOCTYPE html>
+<html lang="en">
 
-    <label for="name"><b>Nombre</b></label>
-    <input type="text" placeholder="Ingresa el nombre del producto" name="name" required <%= text_field_tag 'name', @nombre %>
-
-    <label for="stock"><b>Stock</b></label>
-    <input type="text" placeholder="Ingresa el Stock del producto" name="stock" required <%= text_field_tag 'stock', @stock %>
-
-    <label for="code"><b>Codigo</b></label>
-    <input type="text" placeholder="Ingresa el Codigo del producto" name="code" required <%= text_field_tag 'code', @codigo %>
-
-    <label for="price"><b>Precio</b></label>
-    <input type="text" placeholder="Ingresa el Precio del producto" name="price" required <%= text_field_tag 'price', @precio %>
-
-    <label for="type"><b>Tipo De Producto</b></label>
-    <input type="text" placeholder="Ingresa el Tipo de producto" name="type" required <%= text_field_tag 'type', @tipo %>
+  <head>
 
 
 
 
-    <!--<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>-->
+  </head>
 
-    <div class="clearfix">
+<body class="is-preload">
 
-      <!--<button type="button" class="cancelbtn" >cancelar</button>-->
-      <!--button class="cancelbtn" onclick="window.location.href='/';">Cancelar</button-->
-      <button type="submit" class="signupbtn" onclick="PopUp()">Añadir</button>
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Main -->
+        <div id="main">
+          <div class="inner">
+
+            <!-- Header -->
+            <header id="header">
+              <div class="logo">
+                <a >Inventario Online</a>
+              </div>
+            </header>
+
+
+              <section class="top-image">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="down-content">
+                      <form>
+                              <div class="container">
+                                <h1>Añadir a inventario</h1>
+                                <p>LLena los campos para añadir al inventario.</p>
+                                <hr>
+                            
+                                <label for="name"><b>Nombre</b></label>
+                                <input type="text" placeholder="Ingresa el nombre del producto" name="name" required <%= text_field_tag 'name', @nombre %>
+                            
+                                <label for="stock"><b>Stock</b></label>
+                                <input type="text" placeholder="Ingresa el Stock del producto" name="stock" required <%= text_field_tag 'stock', @stock %>
+                            
+                                <label for="code"><b>Codigo</b></label>
+                                <input type="text" placeholder="Ingresa el Codigo del producto" name="code" required <%= text_field_tag 'code', @codigo %>
+                            
+                                <label for="price"><b>Precio</b></label>
+                                <input type="text" placeholder="Ingresa el Precio del producto" name="price" required <%= text_field_tag 'price', @precio %>
+                            
+                                <label for="type"><b>Tipo De Producto</b></label>
+                                <input type="text" placeholder="Ingresa el Tipo de producto" name="type" required <%= text_field_tag 'type', @tipo %>
+                          
+                                <!--<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>-->
+                            
+                                <div class="action" >
+                            
+                                  <!--<button type="button" class="cancelbtn" >cancelar</button>-->
+                                  <!--button class="cancelbtn" onclick="window.location.href='/';">Cancelar</button-->
+                                  <button type="submit" class="primary-button" onclick="PopUp()" >Añadir</button>
+                                  <button type="reset" class="primary-button" >reset</button>
+                                </div>
+                              </div>
+                            </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+
+          </div>
+        </div>
+
+      <!-- Sidebar -->
+        <div id="sidebar">
+          <div class="inner">             
+            <!-- Menu -->
+            <nav id="menu">
+              <ul>
+                <li><a href="home">Inicio</a></li>
+                <li><a href="add">add</a></li>
+                <li><a href="verify">verify</a></li>
+                <li><a <%= link_to "cerrar sesion", destroy_user_session_path, method: :delete %></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
     </div>
-  </div>
-</form>
+
+
+</body>
+
+
+  </body>
+
+</html>

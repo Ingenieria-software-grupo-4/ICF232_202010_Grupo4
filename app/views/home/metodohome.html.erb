@@ -1,14 +1,70 @@
-<body>
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+  </head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Main -->
+        <div id="main">
+          <div class="inner">
+
+            <!-- Header -->
+            <header id="header">
+              <div class="logo">
+                <a>Inventario Online</a>
+              </div>
+            </header>
+
+            <!-- Banner -->
+            <section class="main-banner">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="banner-content">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="banner-caption">
+                            <h4>Bienvenido a tu <em>Inventario Online</em> </h4>
+                            <p>EL lugar donde podras trabajar y manejar tu empresa de la mejor manera.</p>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
 
 
+          </div>
+        </div>
 
+      <!-- Sidebar -->
+        <div id="sidebar">
+          <div class="inner">             
+            <!-- Menu -->
+            <nav id="menu">
+              <ul>
+                <li><a href="home">Inicio</a></li>
+                <li><a href="add">add</a></li>
+                <li><a href="verify">verify</a></li>
+                <li><a <%= link_to "cerrar sesion", destroy_user_session_path, method: :delete %></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+    </div>
 
- <div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="/add">Agregar producto al inventario</a>
-  <a href="/verify">Verificar productos del inventario</a>
-  <a href="/login">Cerrar sesion</a>
-</div> 
-
-<h1>Home</h1>
 </body>
+
+
+  </body>
+
+</html>
