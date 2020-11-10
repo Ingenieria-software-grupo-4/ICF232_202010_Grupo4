@@ -31,3 +31,4 @@ Things you may want to cover:
 * Crear una cuenta o usar la que tenemos (email: vargas.caceres.felipe@gmail.com pass: felipe7)
 * Moverse en el navbar al sector de añadir producto, en ese lugar añadir todos los productos que estime necesarios
 * Moverse en el navbar al sector de verificar productos, para poder ver todos los productos añadidos, ademas de poder filtrar segun la barra de busqueda.
+* Trello: https://trello.com/b/2zE03KFp/inventario-online-sprint-2
