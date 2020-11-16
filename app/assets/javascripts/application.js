@@ -19,7 +19,6 @@
 function PopUp(){
   alert("El producto fue creado con exito.")
 }
-
 function myFunction() {
   // Declare variables
   var input, filter, table, tr, td, i, txtValue;
@@ -45,34 +44,38 @@ function myFunction() {
 
         window.onload = function cart () {
             // Variables
-    
+            var nombre = document.getElementsByTagName("nombre");
+            var precio = document.getElementsByTagName("precio");
+            var codigo = document.getElementsByTagName("cod"); 
 
+            baseDeDatos =
+            [
 
-            let baseDeDatos = [
                 {
-                    id: 1,
-                    nombre: 'Patata',
-                    precio: 1000,
-                },
-                {
-                    id: 2,
-                    nombre: 'Cebolla',
-                    precio: 1200,
-                },
-                {
-                    id: 3,
-                    nombre: 'Calabacin',
-                    precio: 2100,
-                },
-                {
-                    id: 4,
-                    nombre: 'Fresas',
-                    precio: 600,
+                    id: codigo [1].innerHTML,
+                    nombre: nombre[1].innerHTML,
+                    precio: parseInt(precio[1].innerText),
                 }
 
 
 
             ]
+            for (i = 2; i < 4; i++) {
+
+                baseDeDatos.push(
+                    {
+                    id: codigo [i].innerHTML,
+                    nombre: nombre[i].innerHTML,
+                    precio: parseInt(precio[i].innerText),
+                    }
+
+                    )
+
+               
+                
+            }
+
+            
             let $items = document.querySelector('#items');
             let carrito = [];
             let total = 0;

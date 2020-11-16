@@ -4,6 +4,9 @@
 <html lang="en">
 
   <head>
+    <link rel="preload" href="aplication.js" as="script">
+
+
 
 
   </head>
@@ -32,6 +35,18 @@
                     <div class="down-content">
                     	<div class="container">
     						<div class="row">
+                 
+
+                  <% @productos.each do |p| %>
+                  <nombre><%= p.nombre %></nombre>
+                  <cod><%= p.codigo %></cod>
+                  <precio><%= p.precio %></precio>
+                  <% end %>
+                 
+                  <p id="demo"></p>
+                  
+
+
       						  <!-- Elementos generados a partir del JSON -->
      						   <main id="items" class="col-sm-8 row"></main>
     						    <!-- Carrito -->
@@ -41,15 +56,6 @@
     						        <ul id="carrito" class="list-group" onkeyup="cart()"></ul>
     						        
 
-
-
-
-
-
-
-
-
-    						        <hr>
     						        <!-- Precio total -->
    						         <p class="text-right">Total: <span id="total"></span>$</p>
     						        <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
@@ -75,6 +81,7 @@
                 <li><a href="home">Inicio</a></li>
                 <li><a href="add">add</a></li>
                 <li><a href="verify">verify</a></li>
+                <li><a href="cart">venta</a></li>
                 <li><a <%= link_to "cerrar sesion", destroy_user_session_path, method: :delete %></a></li>
               </ul>
             </nav>
