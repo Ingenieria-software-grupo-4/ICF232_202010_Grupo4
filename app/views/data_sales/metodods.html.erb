@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+  </head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Main -->
+        <div id="main">
+          <div class="inner">
+
+            <!-- Header -->
+            <header id="header">
+              <div class="logo">
+                <a>Inventario Online</a>
+              </div>
+            </header>
+
+            section class="top-image">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="down-content">
+                     <!-- <input type="submit" id="busqueda" onclick="estadisticas()" > -->
+
+                              <table id="myTable">
+                                <tr class="header">
+                                  <th style="width:40%;">articulo mas vendido</th>
+                                  
+                                  
+                                </tr>
+                                  <% @stats.each do |p|%>
+                                <tr>
+                                  <td><%= p %></td>
+                                 
+                                </tr>
+                                <% end %>
+                              </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+
+          </div>
+        </div>
+
+      <!-- Sidebar -->
+        <div id="sidebar">
+          <div class="inner">             
+            <!-- Menu -->
+            <nav id="menu">
+              <ul>
+                <li><a href="home">Inicio</a></li>
+                <li><a href="add">add</a></li>
+                <li><a href="verify">verify</a></li>
+                <li><a href="data_sale">estadisticas</a></li>
+                <li><a <%= link_to "cerrar sesion", destroy_user_session_path, method: :delete %></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+    </div>
+
+</body>
+
+
+  </body>
+
+</html>

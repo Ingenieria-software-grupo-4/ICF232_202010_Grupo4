@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'add', to: 'add#metodoadd'
   get 'modif', to: 'modif#metodomodif'
   get 'verify', to: 'verify#metodoverify'
+  get 'data_sales' , to: 'data_sales#metodods'
 
 
   devise_for :users

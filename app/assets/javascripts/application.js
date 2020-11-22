@@ -42,3 +42,6 @@ function myFunction() {
   }
 }
 
+function estadisticas(){
+  
+}
