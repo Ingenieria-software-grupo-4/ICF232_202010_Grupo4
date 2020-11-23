@@ -4,7 +4,7 @@
 <html lang="en">
 
   <head>
-    <link rel="preload" href="aplication.js" as="script">
+
 
 
 
@@ -35,13 +35,17 @@
                     <div class="down-content">
                     	<div class="container">
     						<div class="row">
-                 
-
-                  <% @productos.each do |p| %>
+                  <p style="color: white">
+                    <% @productos.each do |p| %>
                   <nombre><%= p.nombre %></nombre>
                   <cod><%= p.codigo %></cod>
                   <precio><%= p.precio %></precio>
                   <% end %>
+                    
+                  </p>
+                 
+
+                  
                  
                   <p id="demo"></p>
                   
@@ -59,6 +63,11 @@
     						        <!-- Precio total -->
    						         <p class="text-right">Total: <span id="total"></span>$</p>
     						        <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                        <button id="boton-venta" class="btn btn-danger" >Venta</button>
+                         <p style="color: white">
+
+
+                         </p>
     						    </aside>
    						 </div>
 						</div>

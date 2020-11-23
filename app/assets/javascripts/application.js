@@ -43,6 +43,8 @@ function myFunction() {
 
 
         window.onload = function cart () {
+
+
             // Variables
             var nombre = document.getElementsByTagName("nombre");
             var precio = document.getElementsByTagName("precio");
@@ -60,7 +62,7 @@ function myFunction() {
 
 
             ]
-            for (i = 2; i < 4; i++) {
+            for (i = 2; i < codigo.length; i++) {
 
                 baseDeDatos.push(
                     {
@@ -82,6 +84,8 @@ function myFunction() {
             let $carrito = document.querySelector('#carrito');
             let $total = document.querySelector('#total');
             let $botonVaciar = document.querySelector('#boton-vaciar');
+            let $botonVenta = document.querySelector('#boton-venta')
+           
 
             // Funciones
             function renderItems() {
@@ -195,9 +199,27 @@ function myFunction() {
                 calcularTotal();
             }
 
+            function venta(){
+
+
+                for (var i = 0; i > carrito.length; i++) {
+                    Product.where(codigo == carrito[i]).stock = Product.where(codigo == carrito[i]).stock -1;
+                }
+
+
+
+
+
+
+
+
+            }
+
             // Eventos
             $botonVaciar.addEventListener('click', vaciarCarrito);
+            $botonVenta.addEventListener('click', venta);
 
+             
             // Inicio
             renderItems();
         } 
