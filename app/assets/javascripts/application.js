@@ -200,18 +200,15 @@ function myFunction() {
             }
 
             function venta(){
+                
+                    document.getElementById("codigo").textContent= carrito;
 
+                
 
-                for (var i = 0; i > carrito.length; i++) {
-                    Product.where(codigo == carrito[i]).stock = Product.where(codigo == carrito[i]).stock -1;
-                }
+                    
 
-
-
-
-
-
-
+                
+                
 
             }
 
