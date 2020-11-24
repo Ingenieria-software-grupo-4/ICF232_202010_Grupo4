@@ -14,7 +14,9 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-
+function PopUp2(){
+  alert("La venta fue realizada con exito.")
+}
 
 function PopUp(){
   alert("El producto fue creado con exito.")
@@ -201,7 +203,7 @@ function myFunction() {
 
             function venta(){
                 
-                    document.getElementById("codigo").textContent= carrito;
+                    document.getElementById("codigo").textContent = carrito;
 
                 
 
