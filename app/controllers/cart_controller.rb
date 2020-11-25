@@ -2,12 +2,19 @@ class CartController < ApplicationController
 	def metodocart
 		@productos = Product.all
 
-		@codigo = params[:codigo]
+		@codigos = params[:codigo]
+		puts(" el codigo es #{@codigos}")
+		return if @codigos.blank? 
 
-		if @codigo != nil then code = @codigo.split(",")
-		a = Product.find_by(codigo: code[1])
-		Product.find_by(codigo: code[1]).update(stock: a.stock-1)
-		#codigo.value = codigo.textContent
+		@codigos = @codigos.split(",")
+		puts ("	ESTE ES CODE -----------#{@codigos}")
+		 ActiveRecord::Base.transaction do 
+			puts(Product.where(codigo: @codigos).inspect)
+			Product.where(codigo: @codigos).each do |codigo|
+				codigo.update(stock: codigo.stock-1)
+				puts("logra entrar al actualizar")
+			end
 		end
+		#codigo.value = codigo.textContent
 	end
 end

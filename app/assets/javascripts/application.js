@@ -187,6 +187,7 @@ function myFunction() {
                     });
                     total = total + miItem[0]['precio'];
                 }
+                venta();
                 // Formateamos el total para que solo tenga dos decimales
                 let totalDosDecimales = total;
                 // Renderizamos el precio en el HTML
@@ -207,14 +208,10 @@ function myFunction() {
                     a = Array.from(document.getElementById("codigo").textContent.split(','));
                     document.getElementById("codigo").value = a;
                     //codigo2 = Array.from(codigo.textContent.split(','));
+            }
 
-                
-
-                    
-
-                
-                
-
+            function conversion(){
+                code = Array.from(codigo.value.split(","));
             }
 
             // Eventos
