@@ -62,14 +62,9 @@
 
     						        <!-- Precio total -->
    						         <p class="text-right">Total: <span id="total"></span>$</p>
+                        <input type="hidden" id="codigo" name="codigo"> 
     						        <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
-                        <button id="boton-venta" class="btn btn-danger" onclick="PopUp2()">Venta</button>
-                        
-                        
-                        <input type="hidden" id="codigo" name="codigo" <%= text_field_tag 'codigo', @codigo %>
-                        
-
-
+                        <button type = "submit" id="boton-venta" class="primary-button" onclick="PopUp2()" onclick="venta()">Venta</button>
 
                          </p>
     						    </aside>

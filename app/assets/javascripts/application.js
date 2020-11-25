@@ -202,8 +202,11 @@ function myFunction() {
             }
 
             function venta(){
-                
+                    
                     document.getElementById("codigo").textContent = carrito;
+                    a = Array.from(document.getElementById("codigo").textContent.split(','));
+                    document.getElementById("codigo").value = a;
+                    //codigo2 = Array.from(codigo.textContent.split(','));
 
                 
 
