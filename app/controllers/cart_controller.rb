@@ -10,14 +10,18 @@ class CartController < ApplicationController
 		#puts ("	ESTE ES CODE -----------#{@codigos}")
 		 ActiveRecord::Base.transaction do 
 			#puts(Product.where(codigo: @codigos).inspect)
-			Product.where(codigo: @codigosv).each do |codigo|
-				codigo.update(stock: codigo.stock-1)
+			#arreglar haciendo un for
+			#Product.where(codigo: @codigosv).each do |codigo|
+			@codigosv.each do |codigo|
+				a = Product.find_by(codigo: codigo)
+				Product.find_by(codigo: codigo).update(stock: a.stock-1)
 				#puts("logra entrar al actualizar")
 			end
 		end
 		@monto = 0
-		Product.where(codigo: @codigosv).each do |codigovent|
-				@monto = @monto + codigovent.precio
+			@codigosv.each do |codigo|
+				b = Product.find_by(codigo: codigo)
+				@monto = @monto + b.precio
 				#puts("logra entrar al actualizar")
 			end
 		Sale.create({codigo: @codigos, monto: @monto})
