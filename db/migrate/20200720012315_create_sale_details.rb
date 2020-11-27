@@ -9,4 +9,4 @@ class CreateSaleDetails < ActiveRecord::Migration[5.2]
   end
 end
 
-#SaleDetail.create!(codigo_venta: "111", id_producto: [9999,9999,8888,7777], cantidad: "1")
+#SaleDetail.create!(codigo_venta: "111", productos: [9999,9999,8888,7777], cantidad: "1")

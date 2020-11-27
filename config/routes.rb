@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'modif', to: 'modif#metodomodif'
   get 'verify', to: 'verify#metodoverify'
   get 'data_sales' , to: 'data_sales#metodods'
-
+  get 'report' , to: 'report#metodorep'
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
