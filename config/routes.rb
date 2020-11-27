@@ -4,10 +4,12 @@ Rails.application.routes.draw do
   get 'home/metodohome'
   get 'delete/metododelete'
   get 'home/index'
+  get 'cart/metodocart'
   get 'home', to: 'home#metodohome'
   get 'add', to: 'add#metodoadd'
   get 'modif', to: 'modif#metodomodif'
   get 'verify', to: 'verify#metodoverify'
+  get 'cart', to: 'cart#metodocart'
 
 
   devise_for :users
