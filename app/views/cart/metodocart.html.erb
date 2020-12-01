@@ -65,7 +65,7 @@
                             <%= form_tag cart_metodocart_path, method: :get do %>
                                 <%= hidden_field_tag "codigo" %>
                                 <button id="boton-vaciar" class="btn btn-danger" >Vaciar</button>
-                                <%= submit_tag "Venta", class: 'primary-button', id: 'boton-venta' %>
+                                <button onclick="PopUp2()" <%= submit_tag "Venta", class: 'primary-button', id: 'boton-venta' %>Venta</button>
                             <% end %>
                             </p>
     						</aside>
