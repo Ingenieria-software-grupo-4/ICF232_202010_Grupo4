@@ -10,7 +10,6 @@
 
 
   </head>
-
 <body class="is-preload">
 
     <!-- Wrapper -->
@@ -35,7 +34,9 @@
                     <div class="down-content">
                     	<div class="container">
     						<div class="row">
-                  <p style="color: white">
+
+                  <button onclick="window.location.reload();" >Iniciar Venta</button>
+                  <p hidden="" , style="color: white">
                     <% @productos.each do |p| %>
                   <nombre><%= p.nombre %></nombre>
                   <cod><%= p.codigo %></cod>
@@ -90,7 +91,7 @@
                 <li><a <%= link_to "Inicio",  home_path %></li>
                 <li><a <%= link_to "add",  add_path %></li>
                 <li><a <%= link_to "verify",  verify_path %></li>
-                <li><a href="cart">venta</a></li>
+                <li><a <%= link_to "Venta",  cart_path %></li>
                 <li><a <%= link_to "cerrar sesion", destroy_user_session_path, method: :delete %></a></li>
               </ul>
             </nav>

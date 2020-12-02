@@ -1,5 +1,9 @@
 class CartController < ApplicationController
+
 	def metodocart
+
+
+
 		@productos = Product.all
 
 		@codigos = params[:codigo]
@@ -26,5 +30,7 @@ class CartController < ApplicationController
 			end
 		Sale.create({codigo: @codigos, monto: @monto})
 		#codigo.value = codigo.textContent
+
+		
 	end
 end
