@@ -1,35 +1,47 @@
 class ReportController < ApplicationController
 	def metodorep
-		#toma las ultimos 10 codigos de ventas de usuario
+		#variable que guarda records de venta
 		@user_day_sales = Sale.where(:us => current_user.id)
-
 		
-		@p = Product.where(:id_usuario => current_user.id )
-		#ahora en una variable recorremos los productos vendidos de las 10 ultimas ventas
-		#necesito saber si sobre escribo o añado datos al array
-		arr_prod = []
+		# productos
+		allp = Product.where(:id_usuario => current_user.id)
+		######################################
+		@venta_box = Hash.new
+
+		arr_1 = Array.new
+
+		arr_2 = Array.new
+
 		@user_day_sales.each do |j|
 
-			partial_prod = j.productos #variable temporal de guardado de array
+			partial_prod = j.codigo #variable temporal de guardado de array de codigos de productos
 
-			arr_prod  << partial_prod.split
+			tok = partial_prod.split(",") #dividimos el array de productos
+
+			all_name_str = "" #variable inicializada para guardar una cadena de nombres
+			total_sale = 0
+			tok.each do |cod_spliten| #cambiamos los codigos por nombres y obtenemos el monto total de venta segun producto
+				allp.each do |cod_p|
+					if cod_spliten == cod_p
+						all_name_str = all_name_str + " " + allp.nombre
+						total_sale = total_sale + cod_p.precio
+					end
+				end
+			end
+			arr_1 << all_name_str
+			arr_2 << total_sale
+			#tenemos el string de nombres de prod y precio, ahora lo anyadims a un array
+			
 
 			partial_prod = nil #vaciamos la variable parcial para evitar cualquier error
-
+			tok = nil
 		end
-		#una vez terminado el proceso paramos a guardar en otra variable las ventas para mostrarlas en la vista
-		if arr_prod != nil
-			@arr_prod.each do |n|
-				@prod_to_see = Product.where(:codigo => n)
-			end
-		end
-		#dinero ingresado de las ventas hechas en 1 dia y 1 semana
-		#guardamos en 1 variable el monto que se gano en el dia para enseñarlo en la vista
-		@total_daily_sale = 0
-		Sale.today.map {|a| @total_daily_sale = @total_daily_sale + a.monto}
+		
 
-		#dinero ingresado de las ventas hechas en 1 semana
-		@total_weekly_sale = 0
-		(Sale.today..Sale.today + 5).map! {|b| @total_weekly_sale = @total_weekly_sale + b.monto}
+		arr_1.each_with_index do |par1, par2|
+			@venta_box[par1] = arr_2[par2]
+		end
+		
+		
 	end
 end

@@ -3,6 +3,7 @@
 
   <head>
 
+
   </head>
 
 <body class="is-preload">
@@ -17,39 +18,33 @@
             <!-- Header -->
             <header id="header">
               <div class="logo">
-                <a>Inventario Online</a>
+                <a >Inventario Online</a>
               </div>
             </header>
 
-            <!-- Banner -->
-            <section class="main-banner">
+            
+            <section class="top-image">
               <div class="container-fluid">
                 <div class="row">
                   <div class="col-md-12">
-                    <div class="banner-content">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="banner-caption">
-                            <table id="myTable">
-
+                    <div class="down-content">
+                     <%= @pruebastring %>
+                      <table id="myTable">
                                 <tr class="header">
-                                  <th style="width:40%;">Name</th>
-                        
-                                  <th style="width:20%;">Codigo</th>
-                                  <th style="width:20%;">Precio</th>
+                                  <th style="width:40%;">Productos vendidos</th>
+        
+                                  <th style="width:20%;">Monto total venta</th>
+                                  
                                 </tr>
-                                  <% @prod_to_see.each do |p| %>
-                                <tr>
-                                  <td><%= p.nombre %></td>
-                                
-                                  <td><%= p.codigo %></td>
-                                  <td><%= p.precio %></td>
-                                </tr>
-                                <% end %>
-                              </table>
-                          </div>
-                        </div>
-                      </div>
+                                  <% @venta_box.each do |n|%>
+                                  
+                                    <tr> 
+                                      <td><%= n %></td>
+                                      
+                                    </tr>
+                                  
+                                  <% end%>
+                      </table>          
                     </div>
                   </div>
                 </div>
@@ -78,6 +73,7 @@
           </div>
         </div>
     </div>
+
 
 </body>
 
