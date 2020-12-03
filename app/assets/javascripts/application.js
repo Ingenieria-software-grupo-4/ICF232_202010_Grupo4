@@ -43,8 +43,7 @@ function myFunction() {
   }
 }
 
-
-        window.onload = function cart () {
+window.onload = function cart () {
 
 
             // Variables
@@ -222,4 +221,7 @@ function myFunction() {
             // Inicio
             renderItems();
         } 
+
+
+        
  

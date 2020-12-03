@@ -24,7 +24,7 @@ class CartController < ApplicationController
 				@monto = @monto + b.precio
 				#puts("logra entrar al actualizar")
 			end
-		Sale.create({codigo: @codigos, monto: @monto})
+		Sale.create({codigo: @codigos, monto: @monto, FechaVenta: Date.today})
 		#codigo.value = codigo.textContent
 	end
 end

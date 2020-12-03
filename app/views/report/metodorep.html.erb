@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+
+  </head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Main -->
+        <div id="main">
+          <div class="inner">
+
+            <!-- Header -->
+            <header id="header">
+              <div class="logo">
+                <a >Inventario Online</a>
+              </div>
+            </header>
+
+            
+            <section class="top-image">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="down-content">
+                      <table id="myTable">
+                                  <tr class="header">
+                                  <th style="width:40%;">Productos Vendidos Dia de Hoy</th>
+                                  <th style="width:20%;">Total</th>
+                                </tr>
+                                  <% @arrayids.each do |v| %>
+                                <tr>
+                                  <td><%= Sale.find(v).codigo %></td>
+                                  <td><%= Sale.find(v).monto  %></td>
+                                </tr>
+                                <% end %>
+                                  <td><%= "Venta Total" %></td>
+                                  <td><%= @monto  %></td>
+                      </table>          
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+
+          </div>
+        </div>
+
+      <!-- Sidebar -->
+        <div id="sidebar">
+          <div class="inner">             
+            <!-- Menu -->
+            <nav id="menu">
+              <ul>
+                <li><a href="home">Inicio</a></li>
+                <li><a href="add">add</a></li>
+                <li><a href="verify">verify</a></li>
+                <li><a href="data_sales">estadisticas</a></li>
+                <li><a href="report">Reporte</a></li>
+                <li><a href="cart">venta</a></li>
+                <li><a <%= link_to "cerrar sesion", destroy_user_session_path, method: :delete %></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+    </div>
+
+
+</body>
+
+
+  </body>
+
+</html>
