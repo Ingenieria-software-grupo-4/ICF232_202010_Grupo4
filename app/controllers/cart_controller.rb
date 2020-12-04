@@ -1,9 +1,9 @@
 class CartController < ApplicationController
 	def metodocart
-		@productos = Product.all
+		@productos = Product.where(id_usuario: current_user.id)
 
 		@codigos = params[:codigo]
-		#puts(" el codigo es #{@codigos}")
+		puts(" el codigo es #{@codigos}")
 		return if @codigos.blank? 
 
 		@codigosv = @codigos.split(",")
@@ -24,7 +24,7 @@ class CartController < ApplicationController
 				@monto = @monto + b.precio
 				#puts("logra entrar al actualizar")
 			end
-		Sale.create({codigo: @codigos, monto: @monto, FechaVenta: Date.today})
+		Sale.create({codigo: @codigos, monto: @monto, FechaVenta: Date.today, us: current_user.id})
 		#codigo.value = codigo.textContent
 	end
 end

@@ -1,6 +1,7 @@
 class VentaSemanalController < ApplicationController
 	def metodoventa_semanal
-		@ventassemana = Sale.where(:FechaVenta => Date.today-7 .. Date.today)
+		sale = Sale.where(us: current_user.id)
+		@ventassemana = sale.where(:FechaVenta => Date.today-7 .. Date.today)
 		@array = []
 		@arrayids = []
 

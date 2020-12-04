@@ -1,6 +1,7 @@
 class DataSalesController < ApplicationController
 	def metodods
-		@ventas = Sale.all
+		filtro = Sale.where(:FechaVenta => Date.today-999999 .. Date.today)
+		@ventas = filtro.where(us: current_user.id)
 		@codigosventa = []
 
 		@ventas.each do |x|

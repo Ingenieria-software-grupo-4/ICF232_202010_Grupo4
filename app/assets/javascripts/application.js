@@ -55,15 +55,15 @@ window.onload = function cart () {
             [
 
                 {
-                    id: codigo [1].innerHTML,
-                    nombre: nombre[1].innerHTML,
-                    precio: parseInt(precio[1].innerText),
+                    id: codigo [0].innerHTML,
+                    nombre: nombre[0].innerHTML,
+                    precio: parseInt(precio[0].innerText),
                 }
 
 
 
             ]
-            for (i = 2; i < codigo.length; i++) {
+            for (i = 1; i < codigo.length; i++) {
 
                 baseDeDatos.push(
                     {

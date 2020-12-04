@@ -1,6 +1,7 @@
 class ReportController < ApplicationController
 	def metodorep
-		@ventasdia = Sale.where(FechaVenta: Date.today)
+		sale = Sale.where(us: current_user.id)
+		@ventasdia = sale.where(FechaVenta: Date.today)
 		@array = []
 		@arrayids = []
 

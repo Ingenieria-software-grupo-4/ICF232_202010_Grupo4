@@ -1,5 +1,5 @@
 class VerifyController < ApplicationController
   def metodoverify
-  	@productos = Product.all
+  	@productos = Product.where(id_usuario: current_user.id)
   end
 end
