@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get 'cart', to: 'cart#metodocart'
 
+  get 'venta_semanal', to: 'venta_semanal#metodoventa_semanal'
+
 
 
   devise_for :users
