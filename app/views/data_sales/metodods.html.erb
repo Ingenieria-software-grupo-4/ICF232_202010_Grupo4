@@ -36,6 +36,7 @@
                                 </tr>
                                   <% @productos.each do |f| %>
                                 <tr>
+                                  <%= next if Product.find_by(codigo: f) == nil %>
                                   <td><%= Product.find_by(codigo: f).nombre %></td>
                                   <td><%= @codigosventa.count(f)  %></td>
                                 </tr>
