@@ -10,7 +10,6 @@
 
 
   </head>
-
 <body class="is-preload">
 
     <!-- Wrapper -->
@@ -33,9 +32,11 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="down-content">
-                    	<div class="container">
-    						<div class="row">
-                  <p style="color: white">
+                      <div class="container">
+                <div class="row">
+
+                  <button onclick="window.location.reload();" >Iniciar Venta</button>
+                  <p hidden="" , style="color: white">
                     <% @productos.each do |p| %>
                   <nombre><%= p.nombre %></nombre>
                   <cod><%= p.codigo %></cod>
@@ -51,26 +52,26 @@
                   
 
 
-      						  <!-- Elementos generados a partir del JSON -->
-     						   <main id="items" class="col-sm-8 row"></main>
-    						    <!-- Carrito -->
-    						    <aside class="col-sm-4">
-    						        <h2>Carrito</h2>
-    						        <!-- Elementos del carrito -->
-    						        <ul id="carrito" class="list-group" onkeyup="cart()"></ul>
-    						        
+                    <!-- Elementos generados a partir del JSON -->
+                   <main id="items" class="col-sm-8 row"></main>
+                    <!-- Carrito -->
+                    <aside class="col-sm-4">
+                        <h2>Carrito</h2>
+                        <!-- Elementos del carrito -->
+                        <ul id="carrito" class="list-group" onkeyup="cart()"></ul>
+                        
 
-    						        <!-- Precio total -->
+                        <!-- Precio total -->
                             <p class="text-right">Total: <span id="total"></span>$</p>
                             <%= form_tag cart_metodocart_path, method: :get do %>
                                 <%= hidden_field_tag "codigo" %>
                                 <button id="boton-vaciar" class="btn btn-danger" >Vaciar</button>
-                                <%= submit_tag "Venta", class: 'primary-button', id: 'boton-venta' %>
+                                <button onclick="PopUp2()" <%= submit_tag "Venta", class: 'primary-button', id: 'boton-venta' %>Venta</button>
                             <% end %>
                             </p>
-    						</aside>
-   						 </div>
-						</div>
+                </aside>
+               </div>
+            </div>
                       
                   </div>
                 </div>
@@ -87,12 +88,12 @@
             <!-- Menu -->
             <nav id="menu">
               <ul>
-                <li><a href="home">Inicio</a></li>
-                <li><a href="add">add</a></li>
-                <li><a href="verify">verify</a></li>
-                <li><a href="data_sales">estadisticas</a></li>
-                <li><a href="report">Reporte</a></li>
-                <li><a href="cart">venta</a></li>
+                <li><a <%= link_to "Inicio",  home_path %></li>
+                <li><a <%= link_to "Añadir Producto",  add_path %></li>
+                <li><a <%= link_to "Verificar Inventario",  verify_path %></li>
+                <li><a <%= link_to "Datos Historicos",  data_sales_path %></li>
+                <li><a <%= link_to "Ventas del dia",  report_path %></li>
+                <li><a <%= link_to "Venta",  cart_path %></li>
                 <li><a <%= link_to "cerrar sesion", destroy_user_session_path, method: :delete %></a></li>
               </ul>
             </nav>
