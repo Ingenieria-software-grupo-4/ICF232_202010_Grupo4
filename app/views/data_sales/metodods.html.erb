@@ -31,14 +31,13 @@
 
                               <table id="myTable">
                                 <tr class="header">
-                                  <th style="width:40%;">articulo mas vendido</th>
-                                  
-                                  
+                                  <th style="width:40%;">Producto</th>
+                                  <th style="width:20%;">Cantidad de veces vendido</th>
                                 </tr>
-                                  <% @stats.each do |p|%>
+                                  <% @productos.each do |f| %>
                                 <tr>
-                                  <td><%= p %></td>
-                                 
+                                  <td><%= Product.find_by(codigo: f).nombre %></td>
+                                  <td><%= @codigosventa.count(f)  %></td>
                                 </tr>
                                 <% end %>
                               </table>

@@ -8,7 +8,8 @@ class DataSalesController < ApplicationController
 			@codigosventa = @codigosventa + codigos
 		end
 		puts("Estos son los objetos vendidos historicos #{@codigosventa}")
-			
+		@productos = @codigosventa.uniq
+		puts("Estos son los objetos vendidos historicos #{@productos}")
 	end
 
 end
