@@ -273,3 +273,39 @@ button:hover {
   /* Add a grey background color to the table header and on hover */
   background-color: #f1f1f1;
 }
+
+/*  CSS DE PAGINA INICIAL */
+.imagen-obj > div{
+
+  border-radius: 24px;
+  margin: 12px;
+}
+.txt-b-i > div {
+  background: #eee;
+  padding: 1em;
+}
+.col {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+.col2 {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.col3 {
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+h2 {
+  color: #000;
+}
+p {
+  color: #000;
+  font-family: "Verdana";
+  font-size: 130%;
+}
+li {
+  color: #000;
+  font-family: "Verdana";
+  font-size: 130%;
+}
