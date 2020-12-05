@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/plataformatec/devise.git
-  revision: 45b831c4ea5a35914037bd27fe88b76d7b3683a4
+  revision: dfbed22cee617992e5f846fdef58b724b6b32ff9
   specs:
     devise (4.7.3)
       bcrypt (~> 3.0)
@@ -123,6 +123,7 @@ GEM
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
+    pg (1.2.3)
     public_suffix (4.0.6)
     puma (3.12.6)
     rack (2.2.3)
@@ -225,6 +226,7 @@ DEPENDENCIES
   font-awesome-sass (~> 4.4.0)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  pg
   puma (~> 3.11)
   rails (~> 5.2.3)
   sass-rails (~> 5.0)
