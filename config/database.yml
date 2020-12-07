@@ -1,30 +1,16 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: mysuperuser
-  password: 1234
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: localhost
+  host: db
+  username: postgres
+  password: password
+  pool: 5
 
 development:
   <<: *default
-  database: project_development
-  host: localhost
-  username: mysuperuser
-  password: 1234
+  database: myapp_development
+
 
 test:
   <<: *default
-  database: project_test
-  host: localhost
-  username: mysuperuser
-  password: 1234
-
-production:
-  <<: *default
-  database: project_production
-  username: username
-  password: <%= ENV['PROJECT_DATABASE_PASSWORD'] %>
-  host: localhost
-
-  #sudo -u postgres psql
+  database: myapp_test
