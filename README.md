@@ -33,3 +33,5 @@ Things you may want to cover:
 * Moverse en el navbar al sector de verificar productos, para poder ver todos los productos añadidos, ademas de poder filtrar segun la barra de busqueda.
 * Trello: https://trello.com/b/2zE03KFp/inventario-online-sprint-2
 * Trello: https://trello.com/b/H0XRGvPK/inventario-online-sprint-3
+* Link pitch inventario online https://www.youtube.com/watch?v=rBd8B_qBhDo&feature=youtu.be&ab_channel=AlexanderMercado
+* nota: Al momento de entrar al sing_up se debe recargar la pagina antes de llenar el registro de usuario por un pequeño bug que hay que no se alcanzó a solucionar
